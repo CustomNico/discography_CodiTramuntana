@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lp.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lp.description %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= link_to @lp.artist.name, @lp.artist %>
+</p>
+
+<%= link_to 'Edit', edit_lp_path(@lp), class: "btn btn-large btn-warning" %> |
+<%= link_to 'Back', lps_path, class: "btn btn-large btn-info" %>

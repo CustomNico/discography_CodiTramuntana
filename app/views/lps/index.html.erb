@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lps</h1>
+<div class="form-inline">
+  <%= form_tag("/lps", method: "get") do %>
+    <%= text_field_tag :search_artist_name, nil, placeholder: 'Artist name', class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lps.each do |lp| %>
+      <tr>
+        <td class="name"><%= link_to lp.name, lp %></td>
+        <td class="other"><%= link_to lp.artist.name, lp.artist %></td>
+        <td class="description"><%= lp.description %></td> 
+        <td><%= link_to 'Edit', edit_lp_path(lp), class: "btn btn-large btn-warning" %></td>
+        <td><%= link_to 'Destroy', lp, class: "btn btn-large btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lp', new_lp_path, class: "btn btn-large btn-success" %>

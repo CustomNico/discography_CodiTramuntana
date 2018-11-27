@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DiscographyCoditramuntana</title>
+    <title>Discography CodiTramuntana</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <nav>
+            <ul class="nav">
+              <li class="nav-item <%=active_class(root_path)%>">     <%= link_to "Home", root_path  %></li>
+              <li class="nav-item <%=active_class(artists_path)%>">  <%= link_to "Artist", artists_path %></li>
+              <li class="nav-item <%=active_class(lps_path)%>">      <%= link_to "LP", lps_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

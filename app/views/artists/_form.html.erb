@@ -1,0 +1,31 @@
+<%= form_with(model: artist, local: true) do |form| %>
+  <% if artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+
+      <ul>
+      <% artist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <%= form.label :name, class: "col-sm-2 col-form-label col-form-label-sm" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, id: :artist_name, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :description, class: "col-sm-2 col-form-label col-form-label-sm" %>
+    <div class="col-sm-10">
+      <%= form.text_area :description, id: :artist_description, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.submit( class: "btn btn-large btn-primary") %>
+  </div>
+<% end %>

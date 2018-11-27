@@ -1,0 +1,39 @@
+<%= form_with(model: lp, local: true) do |form| %>
+  <% if lp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lp.errors.count, "error") %> prohibited this lp from being saved:</h2>
+
+      <ul>
+      <% lp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   
+  <div class="field form-group row">
+    <%= form.label :name, class: "col-sm-2 col-form-label col-form-label-sm" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, id: :lp_name, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :description, class: "col-sm-2 col-form-label col-form-label-sm" %>
+    <div class="col-sm-10">
+      <%= form.text_area :description, id: :lp_description, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :artist_id, class: "col-sm-2 col-form-label col-form-label-sm" %>
+    <div class="col-sm-10">
+      <%= form.number_field :artist_id, id: :lp_artist_id, class: "form-control form-control-sm" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit( class: "btn btn-large btn-primary") %>
+  </div>
+
+<% end %>

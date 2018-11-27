@@ -1,0 +1,26 @@
+<div class="center hero-unit">
+  <h1>Discography project Task</h1>
+
+  <h2>
+    This is the home page for the discography project task.
+  </h2>
+
+  <p> Hi fellow programmer, I'm <b>NICOLAU EJARQUE DEU</b> and this is my implementation of the task assigned to prove my Ruby On Rails skills. </p>
+  <p> In this task you'll find two resources: <b>Artists</b> and <b>LPs</b>. </p>
+  <p> You can manage them through the following links or visit their own pages to check all the records registered so far. </p>
+
+  <h1>Artists:</h1> Currently we have <b><%= @artists%></b> artists registered. <br/>
+  
+  <%= link_to "Create artist entry", new_artist_path, class: "btn btn-large btn-success"%> <%= link_to "Check artist page", artists_path, class: "btn btn-large btn-primary"%>
+
+  <h1>LPs:</h1> Currently we have <b><%= @lps%></b> LPs registered. <br/>
+  
+  <%= link_to "Create LP entry", new_lp_path, class: "btn btn-large btn-success"%> <%= link_to "Check LPs page", lps_path, class: "btn btn-large btn-primary"%>
+
+  <br/>
+  
+  <div class="center info-text">
+    You can check the Artist or LP details by clicking on it's name.<br/>
+    You can also edit it's information, delete the entry or even adding new entries by clicking on the appropiate buttons on each page.
+  </div>
+</div>
