@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap-sass', '~>3.3.7'
 gem 'sprockets', '>= 3.7.2'
+gem 'rspec-rails', '~> 3.8'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
