@@ -24,6 +24,7 @@ This readme contains instructions on how to deploy the project in your computer 
     * $ rake db:seed
 
 * How to run the test suite
+    * $ bundle exec rake db:migrate RAILS_ENV=test
     * $ bundle exec rspec spec
 
 * Services
