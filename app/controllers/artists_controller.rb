@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
 
     @aux_lps = []
     @lps.each do |lp|
-      if lp.artist.name.downcase.include?  @artist.name.downcase
+      if lp.artist.name.downcase ==  @artist.name.downcase
         @aux_lps << lp
       end
     end
